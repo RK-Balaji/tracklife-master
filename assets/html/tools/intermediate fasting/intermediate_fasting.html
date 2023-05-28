@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/e6f98328ec.js"></script>
+    <title>Fasting tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../css/if_style.css">
+    <!-- circle progress bar stylesheet from https://tiagobalmeida.github.io/posts/making-a-pure-css-circular-progress-bar.html -->
+    <!-- it creates a circle in css/html and rotates it to show different percentages
+    the circle is assigned a different class depending on the required percentage -->
+    <link rel="stylesheet" type="text/css" href="../../../css/if_css-circular-prog-bar.css">
+    
+    <!--Bulma-->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" type="text/css" rel="stylesheet">
+    
+    
+</head>
+<body>
+<main>
+    
+    <div id="fasting-type">
+        <h3 id="fasting-state-message">You're fasting!</h3>
+        <p class="select-text">select fast:</p>
+        <select id="type-selector">
+            <option class="fast-type" value="16" name="16-8">16-8</option>
+            <option class="fast-type" value="18" name="18-6">18-6</option>
+            <option class="fast-type" value="20" name="20-4">20-4</option>
+        </select>
+    </div>
+
+<div class="circle-timer-container">
+    <!-- progress circle -->
+        <div id="circle" class="progress-circle p1">
+            <div id="circle-text">
+                <div id="elapsed-div">
+                    <p>Hours to go: </p>
+                    <p id="elapsed-time"></p>
+                </div>
+                <span id="percent">0%</span>
+                    <div id="timer-display">
+                        <h1 id="digits-display">0:00:00</h1>
+                    </div>
+            </div>
+            <div class="left-half-clipper">
+              <div class="first50-bar"></div>
+              <div class="value-bar"></div>
+            </div>
+          </div>    
+          
+    
+</div>
+    <div id="start-finish-times" style="display: none;">
+
+        <div id="start-container">
+            <p class="start-finish" id="started">Started fasting:</p>
+            <div class="edit-time-container">
+                <p id="start-time"></p>
+            </div>
+        </div>
+
+        <div id="end-container">
+            <p class="start-finish" id="ended">End fast:</p>
+            <div class="edit-time-container">
+                <p id="end-time"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- button -->
+    <div id="fast-btn">
+        <button id="start-btn" style="display: none;">START FAST</button>
+        <button id="end-btn" style="display: none;">END FAST</button>
+    </div>
+    
+
+    <!-- progress graph -->
+    <div id="weekly-progress-container">
+        <h4>Previous Fasts:</h4>
+        <div id="graph-container">
+            
+        </div>
+    </div>
+
+    <p id="demo-values" style="font-size: 0.6em;">run demo</p>
+</main>
+
+
+
+
+<!-- fasting time sceen (displays when the user clicks end fast btn) -->
+<div id="end-fast-screen" style="display: none;">
+    <div id="close-fast-screen">
+            <p>close</p>
+            <p id="close-icon">&#215</p>
+    </div>
+
+    <div id="message-container">
+        <h3>You fasted:</h3>
+        <h1 id="final-time">00:00:00</h1>
+        <h2 id="congrats">congradulations!</h2>
+    </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.0/progressbar.min.js" integrity="sha512-H3YjV/5Oi9ggWECfksg7G4F3ERL7tU/IAmsEQdVNwtollNU+ROpJyQVgrCYIMaIUoK/Ydew36X3VUXXXkYUm5w==" crossorigin="anonymous"></script>
+    <script src="../../../js/if_js.js"></script>
+</body>
+</html>
